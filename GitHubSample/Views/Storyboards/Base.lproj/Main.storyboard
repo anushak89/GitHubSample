@@ -21,46 +21,126 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoginBackground" translatesAutoresizingMaskIntoConstraints="NO" id="05k-3M-cws">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="b3c-N7-MpF">
-                                <rect key="frame" x="60" y="160" width="294" height="180"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="b3c-N7-MpF">
+                                <rect key="frame" x="60" y="160" width="294" height="240"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="180" id="txG-fS-Wmm"/>
+                                    <constraint firstAttribute="height" constant="240" id="txG-fS-Wmm"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EmailCell" rowHeight="46" id="Wsz-MF-Z10">
-                                        <rect key="frame" x="0.0" y="55.5" width="294" height="46"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserCell" rowHeight="63" id="Wsz-MF-Z10" customClass="TextFieldCell" customModule="GitHubSample" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="55.5" width="294" height="63"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Wsz-MF-Z10" id="jgZ-ty-DjY">
-                                            <rect key="frame" x="0.0" y="0.0" width="294" height="45.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PasswordCell" rowHeight="46" id="emp-f7-Rzc">
-                                        <rect key="frame" x="0.0" y="101.5" width="294" height="46"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="emp-f7-Rzc" id="1sm-yO-llF">
-                                            <rect key="frame" x="0.0" y="0.0" width="294" height="45.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LoginCell" rowHeight="46" id="vFV-AE-GIi">
-                                        <rect key="frame" x="0.0" y="147.5" width="294" height="46"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vFV-AE-GIi" id="x8Y-xc-lZf">
-                                            <rect key="frame" x="0.0" y="0.0" width="294" height="45.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="294" height="63"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rzr-dG-Axc">
-                                                    <rect key="frame" x="0.0" y="0.5" width="294" height="44"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="User" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Knw-GK-AM0">
+                                                    <rect key="frame" x="0.0" y="0.0" width="294" height="30"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="0rl-zI-B50"/>
+                                                    </constraints>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="Wsz-MF-Z10" id="DgJ-zr-QAu"/>
+                                                    </connections>
+                                                </textField>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KCB-Ht-746">
+                                                    <rect key="frame" x="0.0" y="35" width="294" height="2"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="2" id="hrD-Fq-dfc"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="KCB-Ht-746" secondAttribute="trailing" id="Ed1-BY-rMp"/>
+                                                <constraint firstAttribute="trailing" secondItem="Knw-GK-AM0" secondAttribute="trailing" id="G4o-oe-mHX"/>
+                                                <constraint firstItem="Knw-GK-AM0" firstAttribute="leading" secondItem="jgZ-ty-DjY" secondAttribute="leading" id="eyP-dC-Vbg"/>
+                                                <constraint firstItem="Knw-GK-AM0" firstAttribute="top" secondItem="jgZ-ty-DjY" secondAttribute="top" id="gfD-Se-aug"/>
+                                                <constraint firstItem="KCB-Ht-746" firstAttribute="top" secondItem="Knw-GK-AM0" secondAttribute="bottom" constant="5" id="iFH-oy-iOb"/>
+                                                <constraint firstItem="KCB-Ht-746" firstAttribute="leading" secondItem="jgZ-ty-DjY" secondAttribute="leading" id="m9I-fm-C5B"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="textField" destination="Knw-GK-AM0" id="tdf-QD-aEZ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RepoCell" rowHeight="63" id="5lh-T0-1EU" customClass="TextFieldCell" customModule="GitHubSample" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="118.5" width="294" height="63"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5lh-T0-1EU" id="C7A-jT-nQ7">
+                                            <rect key="frame" x="0.0" y="0.0" width="294" height="63"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="Repo" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uVS-Ks-uGf">
+                                                    <rect key="frame" x="0.0" y="0.0" width="294" height="30"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="baN-U0-BCJ"/>
+                                                    </constraints>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="5lh-T0-1EU" id="sYR-gc-KhL"/>
+                                                    </connections>
+                                                </textField>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pJZ-ty-GKO">
+                                                    <rect key="frame" x="0.0" y="35" width="294" height="2"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="2" id="1iT-Zh-jKU"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="pJZ-ty-GKO" secondAttribute="trailing" id="8Jd-rd-qxf"/>
+                                                <constraint firstItem="uVS-Ks-uGf" firstAttribute="leading" secondItem="C7A-jT-nQ7" secondAttribute="leading" id="DUs-iM-mlJ"/>
+                                                <constraint firstItem="uVS-Ks-uGf" firstAttribute="top" secondItem="C7A-jT-nQ7" secondAttribute="top" id="VPd-p9-rjC"/>
+                                                <constraint firstAttribute="trailing" secondItem="uVS-Ks-uGf" secondAttribute="trailing" id="kdI-Kg-VtM"/>
+                                                <constraint firstItem="pJZ-ty-GKO" firstAttribute="leading" secondItem="C7A-jT-nQ7" secondAttribute="leading" id="qzZ-tD-TMy"/>
+                                                <constraint firstItem="pJZ-ty-GKO" firstAttribute="top" secondItem="uVS-Ks-uGf" secondAttribute="bottom" constant="5" id="vH6-y2-H42"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="textField" destination="uVS-Ks-uGf" id="K3Z-f8-HCz"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LoginCell" rowHeight="46" id="vFV-AE-GIi" customClass="ButtonCell" customModule="GitHubSample" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="181.5" width="294" height="46"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vFV-AE-GIi" id="x8Y-xc-lZf">
+                                            <rect key="frame" x="0.0" y="0.0" width="294" height="46"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rzr-dG-Axc">
+                                                    <rect key="frame" x="0.0" y="2" width="294" height="44"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="44" id="hIv-lJ-myh"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
                                                     <state key="normal" title="LOGIN">
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="fetchCommits:" destination="vFV-AE-GIi" eventType="touchUpInside" id="FNo-BP-eLl"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="rzr-dG-Axc" secondAttribute="trailing" id="39q-bp-SMa"/>
+                                                <constraint firstAttribute="bottom" secondItem="rzr-dG-Axc" secondAttribute="bottom" id="NlG-fZ-U1T"/>
+                                                <constraint firstItem="rzr-dG-Axc" firstAttribute="leading" secondItem="x8Y-xc-lZf" secondAttribute="leading" id="aIA-wp-XZc"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

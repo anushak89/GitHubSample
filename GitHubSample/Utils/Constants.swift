@@ -13,7 +13,11 @@ struct Constants {
         case commits = "Commits"
     }
     struct API {
-        static let baseURL = "https://api.github.com/repos/anushak89/NextCar/commits"
+        static let baseURL = "https://api.github.com/"
+        
+        enum endPoint: String {
+            case commits = "repos/%@/%@/commits" // User and Repo
+        }
     }
     
     struct UI {

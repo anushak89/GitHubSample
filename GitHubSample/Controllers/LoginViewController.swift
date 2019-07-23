@@ -10,16 +10,19 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    private var user = ""
+    private var repo = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.fetchCommits()
     }
     
     func fetchCommits() {
-        
-        guard let url = URL(string: Constants.API.baseURL) else { return }
+        let endPoint = String(format: Constants.API.endPoint.commits.rawValue, user, repo)
+        let urlString = Constants.API.baseURL + endPoint
+        guard let url = URL(string: urlString) else { return }
         DispatchQueue.global(qos: .background).async {
             let session = URLSession.shared
             var request = URLRequest(url: url)
@@ -35,10 +38,8 @@ class LoginViewController: UIViewController {
             }
             task.resume()
         }
-        
     }
 }
-
 
 // MARK: - Table view data source and Delegates
 extension LoginViewController: UITableViewDelegate, UITableViewDataSource {
@@ -47,11 +48,43 @@ extension LoginViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "EmailCell", for: indexPath) as? UITableViewCell else { fatalError("Cell not designed")}
-        return cell
+        
+        switch indexPath.row {
+        case 0:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "UserCell", for: indexPath) as? TextFieldCell else { fatalError("Cell not designed")}
+            cell.fieldType = .user
+            cell.delegate = self
+            return cell
+        case 1:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "RepoCell", for: indexPath) as? TextFieldCell else { fatalError("Cell not designed")}
+            cell.fieldType = .repo
+            cell.delegate = self
+            return cell
+        default:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "LoginCell", for: indexPath) as? ButtonCell else { fatalError("Cell not designed")}
+            cell.delegate = self
+            return cell
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return Constants.UI.loginFieldsRowHeight
+    }
+}
+
+// MARK: - Handle Button Cell Delegate Method
+extension LoginViewController: ButtonCellDeleagte {
+    func didPressExploreButton(_ cell: ButtonCell) {
+        self.fetchCommits()
+    }
+}
+
+extension LoginViewController: TextFieldCellDeleagte {
+    func textFieldCell(_ cell: TextFieldCell, didEnterText text: String) {
+        if cell.fieldType == .user {
+            user = text
+        } else {
+            repo = text
+        }
     }
 }
