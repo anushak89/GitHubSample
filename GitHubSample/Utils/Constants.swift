@@ -13,7 +13,7 @@ struct Constants {
         case commits = "Commits"
     }
     struct API {
-        static let baseURL = "https://api.github.com"
+        static let baseURL = "https://api.github.com/repos/anushak89/NextCar/commits"
     }
     
     struct UI {
