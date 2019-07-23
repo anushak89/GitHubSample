@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		F1E21E9122E767ED0048CDF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E21E9022E767ED0048CDF7 /* AppDelegate.swift */; };
-		F1E21E9322E767ED0048CDF7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E21E9222E767ED0048CDF7 /* ViewController.swift */; };
 		F1E21E9622E767ED0048CDF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1E21E9422E767ED0048CDF7 /* Main.storyboard */; };
 		F1E21E9922E767ED0048CDF7 /* GitHubSample.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F1E21E9722E767ED0048CDF7 /* GitHubSample.xcdatamodeld */; };
 		F1E21E9B22E767EE0048CDF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1E21E9A22E767EE0048CDF7 /* Assets.xcassets */; };
 		F1E21E9E22E767EE0048CDF7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1E21E9C22E767EE0048CDF7 /* LaunchScreen.storyboard */; };
 		F1E21EA922E767EE0048CDF7 /* GitHubSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E21EA822E767EE0048CDF7 /* GitHubSampleTests.swift */; };
+		F1E21EBE22E768CA0048CDF7 /* CommitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E21EBD22E768CA0048CDF7 /* CommitsViewController.swift */; };
+		F1E21EC222E769390048CDF7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E21EC122E769390048CDF7 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,7 +30,6 @@
 /* Begin PBXFileReference section */
 		F1E21E8D22E767ED0048CDF7 /* GitHubSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1E21E9022E767ED0048CDF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F1E21E9222E767ED0048CDF7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F1E21E9522E767ED0048CDF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F1E21E9822E767ED0048CDF7 /* GitHubSample.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GitHubSample.xcdatamodel; sourceTree = "<group>"; };
 		F1E21E9A22E767EE0048CDF7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -38,6 +38,8 @@
 		F1E21EA422E767EE0048CDF7 /* GitHubSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1E21EA822E767EE0048CDF7 /* GitHubSampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubSampleTests.swift; sourceTree = "<group>"; };
 		F1E21EAA22E767EE0048CDF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1E21EBD22E768CA0048CDF7 /* CommitsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitsViewController.swift; sourceTree = "<group>"; };
+		F1E21EC122E769390048CDF7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,13 +81,15 @@
 		F1E21E8F22E767ED0048CDF7 /* GitHubSample */ = {
 			isa = PBXGroup;
 			children = (
-				F1E21E9022E767ED0048CDF7 /* AppDelegate.swift */,
-				F1E21E9222E767ED0048CDF7 /* ViewController.swift */,
-				F1E21E9422E767ED0048CDF7 /* Main.storyboard */,
-				F1E21E9A22E767EE0048CDF7 /* Assets.xcassets */,
-				F1E21E9C22E767EE0048CDF7 /* LaunchScreen.storyboard */,
-				F1E21E9F22E767EE0048CDF7 /* Info.plist */,
-				F1E21E9722E767ED0048CDF7 /* GitHubSample.xcdatamodeld */,
+				F1E21EBA22E768740048CDF7 /* General */,
+				F1E21EB922E7686A0048CDF7 /* Models */,
+				F1E21EB822E768650048CDF7 /* Views */,
+				F1E21EB722E7685F0048CDF7 /* View Models */,
+				F1E21EB622E768580048CDF7 /* Controllers */,
+				F1E21EB522E7683F0048CDF7 /* Managers */,
+				F1E21EB422E768390048CDF7 /* Utils */,
+				F1E21EB322E7682E0048CDF7 /* Supporting Files */,
+				F1E21EBB22E7688A0048CDF7 /* CoreData */,
 			);
 			path = GitHubSample;
 			sourceTree = "<group>";
@@ -97,6 +101,85 @@
 				F1E21EAA22E767EE0048CDF7 /* Info.plist */,
 			);
 			path = GitHubSampleTests;
+			sourceTree = "<group>";
+		};
+		F1E21EB322E7682E0048CDF7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F1E21E9F22E767EE0048CDF7 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F1E21EB422E768390048CDF7 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		F1E21EB522E7683F0048CDF7 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		F1E21EB622E768580048CDF7 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F1E21EBD22E768CA0048CDF7 /* CommitsViewController.swift */,
+				F1E21EC122E769390048CDF7 /* LoginViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F1E21EB722E7685F0048CDF7 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		F1E21EB822E768650048CDF7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F1E21EBC22E768970048CDF7 /* Storyboards */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F1E21EB922E7686A0048CDF7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F1E21EBA22E768740048CDF7 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				F1E21E9022E767ED0048CDF7 /* AppDelegate.swift */,
+				F1E21E9A22E767EE0048CDF7 /* Assets.xcassets */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		F1E21EBB22E7688A0048CDF7 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				F1E21E9722E767ED0048CDF7 /* GitHubSample.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		F1E21EBC22E768970048CDF7 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				F1E21E9422E767ED0048CDF7 /* Main.storyboard */,
+				F1E21E9C22E767EE0048CDF7 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,9 +283,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1E21E9322E767ED0048CDF7 /* ViewController.swift in Sources */,
+				F1E21EC222E769390048CDF7 /* LoginViewController.swift in Sources */,
 				F1E21E9122E767ED0048CDF7 /* AppDelegate.swift in Sources */,
 				F1E21E9922E767ED0048CDF7 /* GitHubSample.xcdatamodeld in Sources */,
+				F1E21EBE22E768CA0048CDF7 /* CommitsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,7 +450,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4PYB4FH67A;
-				INFOPLIST_FILE = GitHubSample/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/GitHubSample/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -384,7 +468,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4PYB4FH67A;
-				INFOPLIST_FILE = GitHubSample/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/GitHubSample/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
