@@ -41,6 +41,10 @@ extension TextFieldCell: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         delegate?.textFieldCell(self, didEnterText: textField.text ?? "")
     }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }
 
 extension UITextField {

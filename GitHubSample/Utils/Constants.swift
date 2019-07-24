@@ -22,5 +22,6 @@ struct Constants {
     
     struct UI {
         static let loginFieldsRowHeight: CGFloat = 64
+        static let commitRowHeight: CGFloat = 64
     }
 }

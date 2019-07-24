@@ -10,8 +10,8 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
-    private var user = ""
-    private var repo = ""
+    private var user = "anushak89"
+    private var repo = "GitHubSample"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,10 +80,20 @@ extension LoginViewController: UITableViewDelegate, UITableViewDataSource {
 // MARK: - Handle Button Cell Delegate Method
 extension LoginViewController: ButtonCellDeleagte {
     func didPressExploreButton(_ cell: ButtonCell) {
-        self.fetchCommits()
+        if isValidCredentials() {
+            
+            let commitsViewController = self.storyboard?.instantiateViewController(withIdentifier: "CommitsViewController") as! CommitsViewController
+            commitsViewController.configure(with: user, repo: repo)
+            let navigationControler = UINavigationController(rootViewController: commitsViewController)
+            self.present(navigationControler, animated: true, completion: nil)
+        } else {
+            // Show Error
+            
+        }
     }
 }
 
+// MARK: - Handle TextField Cell Delegate Methods
 extension LoginViewController: TextFieldCellDeleagte {
     func textFieldCell(_ cell: TextFieldCell, didEnterText text: String) {
         if cell.fieldType == .user {
@@ -91,5 +101,11 @@ extension LoginViewController: TextFieldCellDeleagte {
         } else {
             repo = text
         }
+    }
+}
+
+extension LoginViewController {
+    func isValidCredentials() -> Bool {
+        return user.count > 0 && repo.count > 0
     }
 }
