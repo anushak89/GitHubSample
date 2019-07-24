@@ -126,7 +126,7 @@
                                                         <constraint firstAttribute="height" constant="44" id="hIv-lJ-myh"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
-                                                    <state key="normal" title="LOGIN">
+                                                    <state key="normal" title="EXPLORE">
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                     <connections>
