@@ -18,10 +18,14 @@ class CommitListViewModel {
     var showAlertClosure: (()->())?
     var updateLoadingStatus: (()->())?
     
-    private var commits = [CommitResponse]()
-    
+    // To hold all cell viewModels with relevant data
+    private var cellViewModels = [CommitCellViewModel]() {
+        didSet {
+            self.reloadTableViewClosure?()
+        }
+    }
     var numberOfCells: Int {
-        return commits.count
+        return cellViewModels.count
     }
     
     var isLoading: Bool = false {
@@ -53,6 +57,18 @@ class CommitListViewModel {
     }
     
     private func processFetchedCommitResponses(_ responses: [CommitResponse]) {
-        self.commits = responses
+        var viewModels = [CommitCellViewModel]()
+        for response in responses {
+            viewModels.append(createCellViewModel(response))
+        }
+        self.cellViewModels = viewModels
+    }
+    
+    func getCellViewModel( at indexPath: IndexPath ) -> CommitCellViewModel {
+        return cellViewModels[indexPath.row]
+    }
+    
+    func createCellViewModel(_ commitInfo: CommitResponse) -> CommitCellViewModel {
+        return CommitCellViewModel(author: commitInfo.commit.author.name, hash: commitInfo.hash, message: commitInfo.commit.message)
     }
 }

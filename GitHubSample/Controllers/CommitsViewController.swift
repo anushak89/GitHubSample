@@ -45,7 +45,6 @@ class CommitsViewController: UITableViewController {
     }
     
     func configureViewModel() {
-        
         viewModel.showAlertClosure = { [weak self] () in
             DispatchQueue.main.async {
                 if let message = self?.viewModel.alertMessage {
@@ -53,15 +52,16 @@ class CommitsViewController: UITableViewController {
                 }
             }
         }
-        
         viewModel.updateLoadingStatus = { [weak self] () in
             DispatchQueue.main.async {
                 let isLoading = self?.viewModel.isLoading ?? false
                 if isLoading {
+                    self?.activityIndicator.startAnimating()
                     UIView.animate(withDuration: 0.2, animations: {
                         self?.tableView.alpha = 0.3
                     })
                 } else {
+                    self?.activityIndicator.stopAnimating()
                     UIView.animate(withDuration: 0.2, animations: {
                         self?.tableView.alpha = 1.0
                     })
@@ -92,10 +92,10 @@ extension CommitsViewController {
         return viewModel.numberOfCells
     }
 
-//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        guard let cell = tableView.dequeueReusableCell(withIdentifier: "UsedCarCell", for: indexPath) as? UsedCarCell else { fatalError("Cell not designed")}
-//        return cell
-//    }
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CommitCell", for: indexPath) as? CommitCell else { fatalError("Cell not designed")}
+        return cell
+    }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return Constants.UI.commitRowHeight

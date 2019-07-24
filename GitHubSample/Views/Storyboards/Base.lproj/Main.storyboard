@@ -175,13 +175,46 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="64" id="0Eq-o7-2rm">
-                                <rect key="frame" x="0.0" y="55.5" width="414" height="64"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CommitCell" rowHeight="142" id="0Eq-o7-2rm" customClass="CommitCell" customModule="GitHubSample" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="55.5" width="414" height="142"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0Eq-o7-2rm" id="ydZ-ak-BSH">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="63.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="141.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oZg-0S-wOw">
+                                            <rect key="frame" x="15" y="15" width="54" height="36"/>
+                                            <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="26"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i8Q-Oj-TY9">
+                                            <rect key="frame" x="15" y="51" width="50" height="33"/>
+                                            <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="24"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DFQ-m6-PFp">
+                                            <rect key="frame" x="15" y="84" width="50" height="33"/>
+                                            <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="24"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="i8Q-Oj-TY9" firstAttribute="top" secondItem="oZg-0S-wOw" secondAttribute="bottom" id="Cwg-FL-K1o"/>
+                                        <constraint firstItem="oZg-0S-wOw" firstAttribute="top" secondItem="ydZ-ak-BSH" secondAttribute="top" constant="15" id="GEo-dN-zfx"/>
+                                        <constraint firstItem="oZg-0S-wOw" firstAttribute="leading" secondItem="ydZ-ak-BSH" secondAttribute="leading" constant="15" id="URg-j5-WhR"/>
+                                        <constraint firstItem="i8Q-Oj-TY9" firstAttribute="leading" secondItem="oZg-0S-wOw" secondAttribute="leading" id="Za2-ya-plC"/>
+                                        <constraint firstItem="DFQ-m6-PFp" firstAttribute="top" secondItem="i8Q-Oj-TY9" secondAttribute="bottom" id="d8b-cv-qNP"/>
+                                        <constraint firstItem="DFQ-m6-PFp" firstAttribute="leading" secondItem="i8Q-Oj-TY9" secondAttribute="leading" id="nNJ-i2-luH"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="authorLabel" destination="oZg-0S-wOw" id="J6r-Vh-5Tv"/>
+                                    <outlet property="hashLabel" destination="i8Q-Oj-TY9" id="A1r-dP-quD"/>
+                                    <outlet property="messageLabel" destination="DFQ-m6-PFp" id="B4L-YU-8hD"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
