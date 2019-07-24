@@ -12,6 +12,7 @@
 		F158132822E79D5E001576C5 /* ButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F158132722E79D5E001576C5 /* ButtonCell.swift */; };
 		F158135722E89D43001576C5 /* CommitResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F158135622E89D43001576C5 /* CommitResponse.swift */; };
 		F158135B22E8A079001576C5 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F158135A22E8A079001576C5 /* APIManager.swift */; };
+		F158136022E8A436001576C5 /* CommitListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F158135F22E8A436001576C5 /* CommitListViewModel.swift */; };
 		F1E21E9122E767ED0048CDF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E21E9022E767ED0048CDF7 /* AppDelegate.swift */; };
 		F1E21E9622E767ED0048CDF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1E21E9422E767ED0048CDF7 /* Main.storyboard */; };
 		F1E21E9922E767ED0048CDF7 /* GitHubSample.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F1E21E9722E767ED0048CDF7 /* GitHubSample.xcdatamodeld */; };
@@ -38,6 +39,7 @@
 		F158132722E79D5E001576C5 /* ButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCell.swift; sourceTree = "<group>"; };
 		F158135622E89D43001576C5 /* CommitResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitResponse.swift; sourceTree = "<group>"; };
 		F158135A22E8A079001576C5 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		F158135F22E8A436001576C5 /* CommitListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitListViewModel.swift; sourceTree = "<group>"; };
 		F1E21E8D22E767ED0048CDF7 /* GitHubSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1E21E9022E767ED0048CDF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1E21E9522E767ED0048CDF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 		F1E21EB722E7685F0048CDF7 /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				F158135F22E8A436001576C5 /* CommitListViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 				F1E21E9922E767ED0048CDF7 /* GitHubSample.xcdatamodeld in Sources */,
 				F1E21EBE22E768CA0048CDF7 /* CommitsViewController.swift in Sources */,
 				F158132622E79D49001576C5 /* TextFieldCell.swift in Sources */,
+				F158136022E8A436001576C5 /* CommitListViewModel.swift in Sources */,
 				F158132822E79D5E001576C5 /* ButtonCell.swift in Sources */,
 				F158135722E89D43001576C5 /* CommitResponse.swift in Sources */,
 			);
