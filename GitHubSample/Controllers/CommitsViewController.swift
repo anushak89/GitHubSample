@@ -31,6 +31,10 @@ class CommitsViewController: UITableViewController {
         // Update Title
         self.title = Constants.ViewTitle.commits.rawValue
         
+        // TableView AutoResize
+        tableView.estimatedRowHeight = 120.0
+        tableView.rowHeight = UITableView.automaticDimension
+        
         // Set up activity indicator
         self.setupActivityIndicator()
     }
@@ -94,6 +98,7 @@ extension CommitsViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CommitCell", for: indexPath) as? CommitCell else { fatalError("Cell not designed")}
+        cell.cellViewModel = viewModel.getCellViewModel(at: indexPath)
         return cell
     }
 

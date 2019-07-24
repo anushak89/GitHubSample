@@ -14,15 +14,25 @@ class CommitCell: UITableViewCell {
     @IBOutlet weak var hashLabel: UILabel!
     @IBOutlet weak var messageLabel: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    var cellViewModel: CommitCellViewModel? {
+        didSet {
+            updateCellDisplay()
+        }
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        // Reset Data
+        authorLabel.text = ""
+        hashLabel.text = ""
+        messageLabel.text = ""
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func updateCellDisplay() {
+        // Update Data
+        authorLabel.text = cellViewModel?.author
+        hashLabel.text = cellViewModel?.hash
+        messageLabel.text = cellViewModel?.message
     }
 
 }
