@@ -32,8 +32,13 @@ class LoginViewController: UIViewController {
             let task = session.dataTask(with: request) { data, response, error in
                 guard let jsonData = data else { return }
                 do {
-                    let reqJSONStr = String(data: jsonData, encoding: .utf8)
-                    print(reqJSONStr ?? "No Data")
+                    // Decode data to object
+                    let jsonDecoder = JSONDecoder()
+                    let result = try jsonDecoder.decode([CommitResponse].self, from:
+                        jsonData)
+                    print(result)
+                } catch {
+                    print("Error")
                 }
             }
             task.resume()
