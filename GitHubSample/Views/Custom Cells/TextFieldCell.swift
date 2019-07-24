@@ -32,7 +32,7 @@ class TextFieldCell: UITableViewCell {
     }
 
     func configureUI() {
-        textField.placeholderColor(color: UIColor.white)
+        textField.placeholderColor(color: UIColor.darkGray)
     }
 }
 
