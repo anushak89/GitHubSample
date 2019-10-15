@@ -18,32 +18,6 @@ class LoginViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-    
-    func fetchCommits() {
-        let endPoint = String(format: Constants.API.endPoint.commits.rawValue, user, repo)
-        let urlString = Constants.API.baseURL + endPoint
-        guard let url = URL(string: urlString) else { return }
-        DispatchQueue.global(qos: .background).async {
-            let session = URLSession.shared
-            var request = URLRequest(url: url)
-            request.httpMethod = "GET"
-            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-            
-            let task = session.dataTask(with: request) { data, response, error in
-                guard let jsonData = data else { return }
-                do {
-                    // Decode data to object
-                    let jsonDecoder = JSONDecoder()
-                    let result = try jsonDecoder.decode([CommitResponse].self, from:
-                        jsonData)
-                    print(result)
-                } catch {
-                    print("Error")
-                }
-            }
-            task.resume()
-        }
-    }
 }
 
 // MARK: - Table view data source and Delegates
